@@ -1,0 +1,191 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #9dc6f1;
+}
+
+
+header {
+    background-color: #173351;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+
+header h1 {
+    margin: 0 0 15px;
+    color: #ddd;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+
+#nav-menu {
+    display: block;
+}
+
+#nav-menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#nav-menu ul li a:hover {
+    color: #007BFF;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #173351;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+    }
+
+    #nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    #nav-menu ul li a {
+        display: block;
+        padding: 10px;
+        color: #ffffff;
+    }
+}
+
+
+#kontakt {
+    padding: 20px;
+    text-align: center;
+}
+
+#kontakt h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #007BFF;
+}
+
+
+.kontakt-info form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.kontakt-info label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.kontakt-info input, 
+.kontakt-info textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.kontakt-info button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kontakt-info button:hover {
+    background-color: #0056b3;
+}
+
+/* Mapa */
+.mapa {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    background-color: #173351;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}

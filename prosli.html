@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prošli Događaji</title>
+    <link rel="stylesheet" href="prosli.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Sportski Događaji</h1>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="pocetna.html">Početna</a></li>
+                <li><a href="predstojeci.html">Predstojeći Događaji</a></li>
+                <li><a href="prosli.html">Prošli Događaji</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="prosli-dogadjaji">
+            <h2>Prošli Događaji</h2>
+
+            <div class="dogadjaji-container">
+                <div class="dogadjaj">
+                    <h3>Olimpijske Igre</h3>
+                    <p><strong>Datum:</strong> 1. avgust 2024.</p>
+                    <p><strong>Lokacija:</strong> Grad Olimpija</p>
+                    <p><strong>Opis:</strong> Olimpijske igre sa takmičenjima u različitim sportovima. Vrhunski sportisti iz celog sveta se takmiče za medalje.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Svetsko Prvenstvo u Atletici</h3>
+                    <p><strong>Datum:</strong> 15. jul 2024.</p>
+                    <p><strong>Lokacija:</strong> Stadion Olimpijski</p>
+                    <p><strong>Opis:</strong> Najveće atletsko takmičenje godine, sa najboljim atletičarima iz različitih disciplina.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Turnir u Tenisu</h3>
+                    <p><strong>Datum:</strong> 25. jun 2024.</p>
+                    <p><strong>Lokacija:</strong> Teniski Centar</p>
+                    <p><strong>Opis:</strong> Uzbudljiv teniski turnir sa mnogim poznatim igračima. Svakako događaj koji se ne propušta.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Ženski Fudbalski Kup</h3>
+                    <p><strong>Datum:</strong> 10. maj 2024.</p>
+                    <p><strong>Lokacija:</strong> Fudbalski Stadion</p>
+                    <p><strong>Opis:</strong> Takmičenje najboljih ženskih fudbalskih timova u zemlji. Emocionalne utakmice i uzbudljiva završnica.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Maraton u Gradu</h3>
+                    <p><strong>Datum:</strong> 5. april 2024.</p>
+                    <p><strong>Lokacija:</strong> Centralni Park</p>
+                    <p><strong>Opis:</strong> Popularni maraton sa učesnicima svih uzrasta i nivoa spremnosti. Pridružite se za sjajnu trku kroz grad.</p>
+                </div>
+                
+          
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

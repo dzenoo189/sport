@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predstojeći Događaji</title>
+    <link rel="stylesheet" href="predstojeci.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><b>Sportski Događaji</b></h1>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="pocetna.html">Početna</a></li>
+                <li><a href="predstojeci.html">Predstojeći Događaji</a></li>
+                <li><a href="prosli.html">Prošli Događaji</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="predstojeci-dogadjaji">
+            <h2>Predstojeći Događaji</h2>
+
+            <div class="dogadjaji-container">
+                <!-- ... -->
+                <div class="dogadjaj">
+                    <h3>Fudbalsko Prvenstvo</h3>
+                    <p><strong>Datum:</strong> 20. avgust 2024.</p>
+                    <p><strong>Lokacija:</strong> Stadion A</p>
+                    <p><strong>Opis:</strong> Najveće fudbalsko prvenstvo u zemlji sa timovima iz svih krajeva sveta. Dođite da uživate u vrhunskom fudbalu.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Košarkaški Turnir</h3>
+                    <p><strong>Datum:</strong> 10. septembar 2024.</p>
+                    <p><strong>Lokacija:</strong> Arena B</p>
+                    <p><strong>Opis:</strong> Uzbudljiv košarkaški turnir sa učesnicima iz različitih liga. Ne propustite priliku da vidite najbolje igrače u akciji.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Teniski Turnir</h3>
+                    <p><strong>Datum:</strong> 15. oktobar 2024.</p>
+                    <p><strong>Lokacija:</strong> Terene C</p>
+                    <p><strong>Opis:</strong> Prestizni teniski turnir sa internacionalnim igračima. Dođite da podržite svoje omiljene tenisere i uživate u vrhunskom tenisu.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Plivački Šampionat</h3>
+                    <p><strong>Datum:</strong> 5. novembar 2024.</p>
+                    <p><strong>Lokacija:</strong> Bazeni D</p>
+                    <p><strong>Opis:</strong> Takmičenje u plivanju sa različitim disciplinama i stilovima. Pridružite se sportistima u najbržim i najuzbudljivijim trkama u vodi.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Atletski Miting</h3>
+                    <p><strong>Datum:</strong> 25. novembar 2024.</p>
+                    <p><strong>Lokacija:</strong> Stadion E</p>
+                    <p><strong>Opis:</strong> Miting u atletici koji okuplja najbolje sportiste iz zemlje i inostranstva. Pratite trke, skakanje i bacanje na najvišim nivoima.</p>
+                </div>
+
+                <!-- Additional Event Cards -->
+                <div class="dogadjaj">
+                    <h3>Rukometni Turnir</h3>
+                    <p><strong>Datum:</strong> 12. decembar 2024.</p>
+                    <p><strong>Lokacija:</strong> Sala F</p>
+                    <p><strong>Opis:</strong> Uzbudljiv rukometni turnir sa timovima iz različitih gradova. Ne propustite priliku da vidite najbolje rukometaše u akciji.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Judo Takmičenje</h3>
+                    <p><strong>Datum:</strong> 20. decembar 2024.</p>
+                    <p><strong>Lokacija:</strong> Sala G</p>
+                    <p><strong>Opis:</strong> Takmičenje u judu sa vrhunskim borcima. Dođite da podržite sportiste i uživate u dinamičnim borbama.</p>
+                </div>
+
+                <div class="dogadjaj">
+                    <h3>Skijaški Festival</h3>
+                    <p><strong>Datum:</strong> 5. januar 2025.</p>
+                    <p><strong>Lokacija:</strong> Planina H</p>
+                    <p><strong>Opis:</strong> Festival skijanja sa raznim disciplinama i takmičenjima. Iskusite uzbuđenje skijanja i uživajte u zimskim radostima.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

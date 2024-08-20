@@ -1,0 +1,167 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #9dc6f1;
+}
+
+header {
+    background-color: #173351;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+
+header h1 {
+    margin: 0 0 15px;
+    color: #ddd;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+
+#nav-menu {
+    display: block;
+}
+
+#nav-menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#nav-menu ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#nav-menu ul li a:hover {
+    color: #007BFF;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #173351;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+    }
+
+    #nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    #nav-menu ul li a {
+        display: block;
+        padding: 10px;
+        color: #ffffff;
+    }
+}
+
+/* Predstojeći Događaji */
+#predstojeci-dogadjaji {
+    padding: 20px;
+    text-align: center;
+}
+
+#predstojeci-dogadjaji h2 {
+    margin-bottom: 20px;
+}
+
+/* Stilizovanje kartica za događaje */
+.dogadjaji-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dogadjaj {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dogadjaj:hover {
+    background-color: #cbb887;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.dogadjaj h3 {
+    margin: 0;
+}
+
+.dogadjaj p {
+    margin: 5px 0;
+}
+
+
+footer {
+    background-color: #173351;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}

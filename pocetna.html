@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportski Događaji - Početna</title>
+    <link rel="stylesheet" href="pocetna.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1><b>Sportski Događaji</b></h1>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="pocetna.html">Početna</a></li>
+                <li><a href="predstojeci.html">Predstojeći Događaji</a></li>
+                <li><a href="prosli.html">Prošli Događaji</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero">
+            <h3>Dobrodošli na Sportske Događaje</h3>
+            <br><br>
+            <a href="#" class="btn" id="subscribe-btn">Prijavite se za prikaz najnovijih vesti</a>
+        </section>
+        
+        <section id="novi-događaji">
+            <h2>Najnoviji Događaji</h2>
+            <p>Ostanite u toku sa najnovijim sportskim događajima i vestima.</p>
+            <div class="news-carousel">
+                <div class="news-item">Vest 1: Veliki fudbalski meč se bliži!</div>
+                <div class="news-item">Vest 2: Košarkaški tim osvojio novi trofej!</div>
+                <div class="news-item">Vest 3: Teniseri se pripremaju za novi turnir.</div>
+                <div class="news-item">Vest 4: Atletičari obaraju rekorde na prvenstvu.</div>
+            </div>
+        </section>
+
+        <section id="predstavljeni-dogadjaji">
+            <div class="dogadjaj">
+                <h3>Fudbalski Turnir</h3>
+                <p>Ove godine organizujemo veliki fudbalski turnir u vašem gradu.</p>
+            </div>
+            <div class="dogadjaj">
+                <h3>Košarkaški Kupu</h3>
+                <p>Pratite sve uzbudljive trenutke na našem košarkaškom kupu.</p>
+            </div>
+            <div class="dogadjaj">
+                <h3>Teniska Liga</h3>
+                <p>Ne propustite najvažnije mečeve naše teniske lige.</p>
+            </div>
+            <div class="dogadjaj">
+                <h3>Atletski Prvenstvo</h3>
+                <p>Gledajte najbolje atlete u akciji na našem prvenstvu.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('subscribe-btn').addEventListener('click', () => {
+            alert('Uspešno ste se prijavili za newsletter!');
+            document.querySelector('#novi-događaji .news-carousel').style.display = 'flex';
+        });
+
+        const newsItems = document.querySelectorAll('.news-item');
+        let currentIndex = 0;
+
+        function showNextNews() {
+            newsItems.forEach((item, index) => {
+                item.classList.toggle('active', index === currentIndex);
+            });
+            currentIndex = (currentIndex + 1) % newsItems.length;
+        }
+
+        document.getElementById('subscribe-btn').addEventListener('click', () => {
+            setInterval(showNextNews, 1500); 
+        });
+
+     
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

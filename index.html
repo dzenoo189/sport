@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportski Događaji</title>
+    <link rel="stylesheet" href="stilovi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+
+</head>
+<body>
+    <header>
+        <h1>Sportski Događaji</h1>
+        <nav>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="predstojeci-dogadjaji">
+            <div class="dogadjaj">
+                <h3>Fudbalsko Prvenstvo</h3>
+                <p>Datum: 20. avgust 2024.</p>
+                <p>Lokacija: Stadion A</p>
+            </div>
+            <div class="dogadjaj">
+                <h3>Košarkaški Turnir</h3>
+                <p>Datum: 10. septembar 2024.</p>
+                <p>Lokacija: Arena B</p>
+            </div>
+        </section>
+        <section id="statistika">
+            <h2>Interesantne Statistike</h2>
+            <p>Fudbalska utakmica prosečno traje 90 minuta, dok košarkaški meč traje 48 minuta. Najveći broj gledalaca na fudbalskom prvenstvu bio je preko 90.000 ljudi.</p>
+        </section>
+        <section id="newsletter">
+            <h2>Prijavite se za Newsletter</h2>
+            <form id="login-form" onsubmit="return prijava(event)">
+                <label for="ime">Ime:</label>
+                <input type="text" id="ime" name="ime" list="ime-suggestions" required>
+                <datalist id="ime-suggestions">
+                    <option value="dzenan">
+                </datalist>
+                
+                <label for="sifra">Šifra:</label>
+                <input type="text" id="sifra" name="sifra" list="sifra-suggestions" required>
+                <datalist id="sifra-suggestions">
+                    <option value="dzenan2003">
+                </datalist>
+                
+                <button type="submit">Prijavi se</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+    
+
+    <script>
+        function prijava(event) {
+            event.preventDefault()
+            var ime = document.getElementById('ime').value;
+            var sifra = document.getElementById('sifra').value;
+            
+            if (ime === 'dzenan' && sifra === 'dzenan2003') {
+                window.location.href = 'pocetna.html';
+            } else {
+                alert('Pogrešno korisničko ime ili šifra. Molimo pokušajte ponovo.');
+            }
+            
+            return false;
+        }
+    </script>
+</body>
+</html>

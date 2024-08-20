@@ -1,0 +1,164 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #9dc6f1;
+}
+
+
+header {
+    background-color: #173351;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+header h1 {
+    margin: 0 0 15px;
+    color: #ddd;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0 auto; 
+}
+
+
+#nav-menu {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#nav-menu ul li {
+    display: inline;
+    margin-right: 15px; 
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#nav-menu ul li a:hover {
+    color: #007BFF;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px; /* Razmak od naslova */
+        left: 50%;
+        transform: translateX(-50%); /* Centriranje */
+        width: 100%;
+        background-color: #173351;
+        text-align: center;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    #nav-menu ul li {
+        margin: 10px 0; /* Razmak između stavki */
+    }
+
+    #nav-menu ul li a {
+        display: block;
+        padding: 10px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
+
+/* Prošli Događaji */
+#prosli-dogadjaji {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+#prosli-dogadjaji h2 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+/* Kontejner za događaje */
+.dogadjaji-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Razmak između kartica */
+}
+
+/* Stilizacija pojedinačnih događaja */
+.dogadjaj {
+    background-color: #ddcfad; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.dogadjaj:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+footer {
+    background-color: #173351;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}
