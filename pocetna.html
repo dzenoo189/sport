@@ -34,11 +34,8 @@
         <section id="novi-događaji">
             <h2>Najnoviji Događaji</h2>
             <p>Ostanite u toku sa najnovijim sportskim događajima i vestima.</p>
-            <div class="news-carousel">
-                <div class="news-item">Vest 1: Veliki fudbalski meč se bliži!</div>
-                <div class="news-item">Vest 2: Košarkaški tim osvojio novi trofej!</div>
-                <div class="news-item">Vest 3: Teniseri se pripremaju za novi turnir.</div>
-                <div class="news-item">Vest 4: Atletičari obaraju rekorde na prvenstvu.</div>
+            <div class="news-carousel" id="news-carousel">
+                <!-- Vesti će se ovde prikazivati -->
             </div>
         </section>
 
@@ -48,7 +45,7 @@
                 <p>Ove godine organizujemo veliki fudbalski turnir u vašem gradu.</p>
             </div>
             <div class="dogadjaj">
-                <h3>Košarkaški Kupu</h3>
+                <h3>Košarkaški Kup</h3>
                 <p>Pratite sve uzbudljive trenutke na našem košarkaškom kupu.</p>
             </div>
             <div class="dogadjaj">
@@ -73,25 +70,18 @@
 
     <script>
         document.getElementById('subscribe-btn').addEventListener('click', () => {
-            alert('Uspešno ste se prijavili za newsletter!');
-            document.querySelector('#novi-događaji .news-carousel').style.display = 'flex';
+            fetch('http://localhost:4000/novosti')
+                .then(response => response.json())
+                .then(data => {
+                    const newsCarousel = document.getElementById('news-carousel');
+                    const newsItem = document.createElement('div');
+                    newsItem.textContent = data.message;
+                    newsItem.classList.add('news-item');
+                    newsCarousel.appendChild(newsItem);
+                })
+                .catch(error => console.error('Greška:', error));
         });
 
-        const newsItems = document.querySelectorAll('.news-item');
-        let currentIndex = 0;
-
-        function showNextNews() {
-            newsItems.forEach((item, index) => {
-                item.classList.toggle('active', index === currentIndex);
-            });
-            currentIndex = (currentIndex + 1) % newsItems.length;
-        }
-
-        document.getElementById('subscribe-btn').addEventListener('click', () => {
-            setInterval(showNextNews, 1500); 
-        });
-
-     
         document.getElementById('menu-toggle').addEventListener('click', () => {
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('active');
