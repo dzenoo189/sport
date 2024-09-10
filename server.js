@@ -3,8 +3,8 @@ const app = express();
 const cors = require('cors');
 const port = 4000;
 
-app.use(cors()); // Omogućava CORS za frontend
-app.use(express.json()); // Omogućava parsiranje JSON tela zahteva
+app.use(cors()); 
+app.use(express.json()); 
 
 const news = [
   "Vest 1: Veliki fudbalski meč se bliži!",

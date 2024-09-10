@@ -10,7 +10,8 @@
 </head>
 <body>
     <header>
-        <h1><b>Sportski Događaji</b></h1>
+        <img src="SPORT EVENTS.png" alt="Logo" class="logo">
+        <h2><b>Sportski Događaji</b></h2>
         <div class="menu-toggle" id="menu-toggle">
             <i class="fa fa-bars"></i>
         </div>
@@ -69,23 +70,39 @@
     </footer>
 
     <script>
-        document.getElementById('subscribe-btn').addEventListener('click', () => {
-            fetch('http://localhost:4000/novosti')
-                .then(response => response.json())
-                .then(data => {
-                    const newsCarousel = document.getElementById('news-carousel');
-                    const newsItem = document.createElement('div');
-                    newsItem.textContent = data.message;
-                    newsItem.classList.add('news-item');
-                    newsCarousel.appendChild(newsItem);
-                })
-                .catch(error => console.error('Greška:', error));
-        });
-
         document.getElementById('menu-toggle').addEventListener('click', () => {
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('active');
         });
-    </script>
+        
+        document.getElementById('subscribe-btn').addEventListener('click', () => {
+            fetch('http://localhost:4000/novosti')
+                .then(response => {
+                    console.log('Response:', response); 
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data:', data); 
+                    const newsCarousel = document.getElementById('news-carousel');
+                    
+                  
+                    newsCarousel.innerHTML = '';
+        
+             
+                    const newsItem = document.createElement('div');
+                    newsItem.textContent = data.message;
+                    newsItem.classList.add('news-item');
+                    newsCarousel.appendChild(newsItem);
+        
+              
+                    const items = document.querySelectorAll('#novi-događaji .news-item');
+                    items.forEach((item, index) => {
+                        item.classList.toggle('active', index === 0);
+                    });
+                })
+                .catch(error => console.error('Greška:', error));
+        });
+        </script>
+        
 </body>
 </html>

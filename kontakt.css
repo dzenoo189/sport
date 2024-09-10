@@ -7,32 +7,47 @@ body, html {
     background-color: #9dc6f1;
 }
 
-
 header {
     background-color: #173351;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     position: relative;
 }
 
-
-header h1 {
-    margin: 0 0 15px;
-    color: #ddd;
+.logo {
+    max-width: 60px; 
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
-
 
 .menu-toggle {
     display: none;
     cursor: pointer;
     font-size: 24px;
     color: #ffffff;
+    background-color: #173351;
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-
 #nav-menu {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    top: 10px;
 }
 
 #nav-menu ul {
@@ -57,16 +72,25 @@ header h1 {
     color: #007BFF;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
     
+    header {
+        padding: 10px;
+    }
+    
+    .logo {
+        max-width: 50px; /* Još manje za mobilne uređaje */
+        top: 10px;
+        left: 10px;
+    }
+
     #nav-menu {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 90px; 
         left: 0;
         right: 0;
         background-color: #173351;
@@ -90,7 +114,7 @@ header h1 {
 
     #nav-menu ul li a {
         display: block;
-        padding: 10px;
+        padding: 12px 20px; 
         color: #ffffff;
     }
 }

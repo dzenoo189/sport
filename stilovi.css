@@ -1,4 +1,3 @@
-/* Generalno stilizovanje */
 html, body {
     margin: 0;
     padding: 0;
@@ -6,7 +5,7 @@ html, body {
     height: 100%;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #9dc6f1;
 }
 
 body {
@@ -17,6 +16,337 @@ body {
     
     
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #9dc6f1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #9dc6f1;
+    font-family: 'Roboto', sans-serif;
+}
+
+header h1{
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+
+header {
+    background-color: #173351;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.logo {
+    max-width: 60px; 
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #173351;
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    top: 10px;
+}
+
+#nav-menu ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#nav-menu ul li a:hover {
+    color: #007BFF;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    header {
+        padding: 10px;
+    }
+    
+    .logo {
+        max-width: 50px; 
+        top: 10px;
+        left: 10px;
+    }
+
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 90px; 
+        left: 0;
+        right: 0;
+        background-color: #173351;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+    }
+
+    #nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    #nav-menu ul li a {
+        display: block;
+        padding: 12px 20px; 
+        color: #ffffff;
+    }
+}
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+
+main {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+#predstojeci-dogadjaji {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#predstojeci-dogadjaji .dogadjaj {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+#newsletter {
+    background-color: #173351;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#newsletter label {
+    margin-bottom: 8px;
+    color: white;
+}
+
+#newsletter input[type="text"],
+#newsletter input[type="password"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    width: 80%;
+    max-width: 300px;
+}
+
+#newsletter button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #173351;
+    cursor: pointer;
+}
+
+#newsletter button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Stil za footer */
+footer {
+    background-color: #173351;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #173351;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+    }
+
+    #nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    #nav-menu ul li a {
+        display: block;
+        padding: 10px;
+        color: #ffffff;
+    }
+}
+
+
+
+    #predstojeci-dogadjaji .dogadjaj {
+        width: 100%;
+    }
+
+    #newsletter input[type="text"],
+    #newsletter input[type="password"] {
+        width: 100%;
+    }
+
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+
+
 h2 {
     font-size: 1.5em;
     margin-bottom: 15px;

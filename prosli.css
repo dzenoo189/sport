@@ -6,47 +6,59 @@ body, html {
     background-color: #9dc6f1;
 }
 
-
 header {
     background-color: #173351;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     position: relative;
 }
 
-header h1 {
-    margin: 0 0 15px;
-    color: #ddd;
+.logo {
+    max-width: 60px; 
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
-
 
 .menu-toggle {
     display: none;
     cursor: pointer;
     font-size: 24px;
     color: #ffffff;
-    margin: 0 auto; 
+    background-color: #173351;
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-
 #nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    top: 10px;
+}
+
+#nav-menu ul {
     display: flex;
     justify-content: center;
     padding: 0;
     margin: 0;
 }
 
-#nav-menu ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
 #nav-menu ul li {
     display: inline;
-    margin-right: 15px; 
+    margin-right: 15px;
 }
 
 #nav-menu ul li a {
@@ -59,23 +71,30 @@ header h1 {
     color: #007BFF;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
     
+    header {
+        padding: 10px;
+    }
+    
+    .logo {
+        max-width: 50px; 
+        top: 10px;
+        left: 10px;
+    }
+
     #nav-menu {
         display: none;
         position: absolute;
-        top: 60px; /* Razmak od naslova */
-        left: 50%;
-        transform: translateX(-50%); /* Centriranje */
-        width: 100%;
+        top: 90px; 
+        left: 0;
+        right: 0;
         background-color: #173351;
         text-align: center;
         z-index: 1000;
-        padding: 10px 0;
     }
 
     #nav-menu.active {
@@ -83,25 +102,22 @@ header h1 {
     }
 
     #nav-menu ul {
-        display: flex;
         flex-direction: column;
-        padding: 0;
+        padding: 20px;
         margin: 0;
     }
 
     #nav-menu ul li {
-        margin: 10px 0; /* Razmak između stavki */
+        margin: 10px 0;
     }
 
     #nav-menu ul li a {
         display: block;
-        padding: 10px;
+        padding: 12px 20px; 
         color: #ffffff;
-        text-decoration: none;
     }
 }
 
-/* Prošli Događaji */
 #prosli-dogadjaji {
     padding: 20px;
     background-color: #ffffff;
@@ -113,28 +129,26 @@ header h1 {
     text-align: center;
 }
 
-/* Kontejner za događaje */
+
 .dogadjaji-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Razmak između kartica */
+    gap: 20px;
 }
 
-/* Stilizacija pojedinačnih događaja */
+
 .dogadjaj {
-    background-color: #ddcfad; 
+    background-color: #ddcfad;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .dogadjaj:hover {
     background-color: #f0f0f0;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-
 
 footer {
     background-color: #173351;
