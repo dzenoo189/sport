@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Events</title>
+    <link rel="stylesheet" href="prosli.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="zaglavlje"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <a href="pocetna-eng.html">
+            <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+        <div>
+          <h2 style="color: aliceblue; letter-spacing: 2px">
+            <b>SPORTS EVENTS</b>
+          </h2>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div>
+          <a href="prosli.html" style="text-decoration: none; color: white">
+            RS
+          </a>
+        </div>
+      </div>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="pocetna-eng.html">Home</a></li>
+          <li><a href="index-eng.html">Interesting facts</a></li>
+          <li><a href="predstojeci-eng.html">Upcoming Events</a></li>
+          <li><a href="prosli-eng.html">Past Events</a></li>
+          <li><a href="kontakt-eng.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="prosli-dogadjaji">
+        <h2>PAST EVENTS</h2>
+
+        <div class="dogadjaji-container">
+          <div class="dogadjaj">
+            <h3>OLYMPIC GAMES</h3>
+            <p><strong>Date:</strong> August 1, 2024.</p>
+            <p><strong>Location:</strong> Olympia City</p>
+            <p>
+              <strong>Description:</strong> The Olympic Games featuring
+              competitions in various sports. Top athletes from around the world
+              compete for medals.
+            </p>
+          </div>
+
+          <div class="dogadjaj">
+            <h3>WORLD ATHLETICS CHAMPIONSHIP</h3>
+            <p><strong>Date:</strong> July 15, 2024.</p>
+            <p><strong>Location:</strong> Olympic Stadium</p>
+            <p>
+              <strong>Description:</strong> The largest athletics competition of
+              the year, featuring the best athletes in various disciplines.
+            </p>
+          </div>
+
+          <div class="dogadjaj">
+            <h3>TENNIS TOURNAMENT</h3>
+            <p><strong>Date:</strong> June 25, 2024.</p>
+            <p><strong>Location:</strong> Tennis Center</p>
+            <p>
+              <strong>Description:</strong> An exciting tennis tournament with
+              many famous players. Definitely an event not to be missed.
+            </p>
+          </div>
+
+          <div class="dogadjaj">
+            <h3>WOMEN'S FOOTBALL CUP</h3>
+            <p><strong>Date:</strong> May 10, 2024.</p>
+            <p><strong>Location:</strong> Football Stadium</p>
+            <p>
+              <strong>Description:</strong> A competition of the best women's
+              football teams in the country. Emotional matches and an exciting
+              finale.
+            </p>
+          </div>
+
+          <div class="dogadjaj">
+            <h3>CITY MARATHON</h3>
+            <p><strong>Date:</strong> April 5, 2024.</p>
+            <p><strong>Location:</strong> Central Park</p>
+            <p>
+              <strong>Description:</strong> A popular marathon with participants
+              of all ages and fitness levels. Join us for a great race through
+              the city.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Sports Events. All rights reserved.</p>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/yourprofile"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

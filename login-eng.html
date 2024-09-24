@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Sports Events</title>
+    <link rel="stylesheet" href="pocetna.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="zaglavlje"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <a href="pocetna-eng.html">
+            <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+        <div class="logo-name">
+          <h2 style="color: aliceblue; letter-spacing: 2px">
+            <b>SPORTS EVENTS</b>
+          </h2>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div>
+          <a
+            href="login-rs.html"
+            class="lang"
+            style="text-decoration: none; color: white"
+            >SR</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="login">
+        <div class="login-container" style="text-align: center">
+          <h3>LOGIN</h3>
+          <form>
+            <div>
+              <label for="username">Username:</label>
+              <input
+                id="username"
+                type="text"
+                placeholder="Type your username..."
+              />
+            </div>
+            <div>
+              <label for="password">Password:</label>
+              <input
+                id="passwordd"
+                type="password"
+                placeholder="Type your password..."
+              />
+            </div>
+            <div id="login-btn">
+              <button id="login-form" onclick="handleSubmit(event)">
+                <a
+                  href="pocetna-eng.html"
+                  style="text-decoration: none; color: aliceblue"
+                >
+                  LOGIN
+                </a>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Sports Events. All rights reserved.</p>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/yourprofile"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+      });
+
+      //login
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("passwordd").value;
+        login(username, password);
+      }
+
+      function login(username, password) {
+        var hashedPass = CryptoJS.MD5(password).toString();
+
+        // fetch("https://password-inator.netlify.app/json/users.json")
+        fetch("") //ovde samo da se ubaci link od njegovog sajta ne stavljas /json jer on nema folder nego samo users.json
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+          })
+          .then((users) => {
+            let exist = false;
+
+            for (let i = 0; i < users.data.length; i++) {
+              if (
+                users.data[i].username == username &&
+                users.data[i].password == hashedPass
+              ) {
+                alert("You are logged in");
+                localStorage.setItem("logged_in", true);
+
+                window.location.href =
+                  // "https://password-inator.netlify.app/pages/generator-eng"; 
+                  // ovde umeto mog linka stavljas /pocetna-eng bez ovog pages jer one nema taj folder, 
+                  // znaci trazis samo path na koju ces tranicu da ti ode kad se ulogujes 
+                  // ti u ovom slusaju hoces da ode na pocetku stranu na engleskom
+                  exist = true;
+                break;
+              }
+            }
+
+            if (!exist) {
+              alert("Invalid login credentials");
+            }
+          })
+          .catch((error) => console.error("Unable to fetch data:", error));
+      }
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

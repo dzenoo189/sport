@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="kontakt.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="zaglavlje"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <a href="pocetna-eng.html">
+            <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+        <div>
+          <h2 style="color: aliceblue; letter-spacing: 2px">
+            <b>SPORTS EVENTS</b>
+          </h2>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div>
+          <a href="kontakt.html" style="text-decoration: none; color: white">
+            RS
+          </a>
+        </div>
+      </div>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="pocetna-eng.html">Home</a></li>
+          <li><a href="index-eng.html">Interesting facts</a></li>
+          <li><a href="predstojeci-eng.html">Upcoming Events</a></li>
+          <li><a href="prosli-eng.html">Past Events</a></li>
+          <li><a href="kontakt-eng.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="kontakt">
+        <h2 id="contactTitle">Contact Us</h2>
+        <div class="kontakt-info">
+          <form onsubmit="return validacijaForme(event)">
+            <label for="ime" id="nameLabel">Name:</label>
+            <input
+              id="firstName"
+              name="firstName"
+              oninput="validnoIme(this)"
+              required
+              type="text"
+              placeholder="Your name"
+              required
+            />
+            <div class="spann">
+              <span class="error" id="firstNameError"></span>
+              <span class="error" id="nameLengthError"></span>
+            </div>
+
+            <label for="email" id="emailLabel">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              oninput="validanMejl(this)"
+              placeholder="Your email"
+              required
+            />
+            <span class="error" id="emailError"></span>
+
+            <label for="poruka" id="messageLabel">Message:</label>
+            <input
+              type="text"
+              id="message"
+              name="message"
+              maxlength="255"
+              oninput="validnaPoruka(this)"
+              placeholder="Your message..."
+              required
+            />
+            <span class="error" id="messageError"></span>
+
+            <button type="button" id="submitBtn">
+              <a href="pocetna-dodatna-eng.html" style="text-decoration: none; color: aliceblue;"> Send </a>
+            </button>
+          </form>
+        </div>
+
+        <div class="mapa">
+          <h3 id="locationTitle">Our Location</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.7828701180577!2d-1.621448684606508!3d54.97872698078817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e7e1b2d1d1d3f%3A0x1c0b2c1c2e1d5f3b!2sNewcastle%20upon%20Tyne%2C%20UK!5e0!3m2!1sen!2sus!4v1623056635922!5m2!1sen!2sus"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p id="footerText">&copy; 2024 Sports Events. All rights reserved.</p>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/yourprofile"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger menu
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+      });
+
+      // Validation functions
+      function validnaPoruka(obj) {
+        obj.value = obj.value.toString();
+        if (
+          obj.value.match(/^[a-zA-Z.!*(){}&^#@$/_?|><%+-,;:\s]{1,255}$/) ===
+          null
+        ) {
+          if (obj.value.match(/^[0-9]{1,255}$/) == null) {
+            obj.style.color = "red";
+            (document.getElementById("messageError").innerHTML =
+              "You have entered invalid characters!") &&
+              (document.getElementById("messageError").style.fontSize =
+                "small");
+            document.getElementById("messageError").style.color = "red";
+
+            document.getElementById("messageError").style.marginBottom = "10px";
+            return false;
+          }
+          if (obj.value.length == 255) {
+            obj.style.color = "red";
+            document.getElementById("messageLengthError").innerHTML =
+              "No more than 255 characters allowed!";
+            return false;
+          }
+        }
+        obj.style.color = "green";
+        document.getElementById("messageError").innerHTML = "";
+        document.getElementById("messageLengthError").innerHTML = "";
+        return true;
+      }
+
+      // Name validation
+      function validnoIme(obj) {
+        var maxLength = 22;
+
+        obj.value = obj.value.toString();
+        var nameLengthError = document.getElementById("nameLengthError");
+        var firstNameError = document.getElementById("firstNameError");
+
+        // Reset styles
+        nameLengthError.innerHTML = "";
+        firstNameError.innerHTML = "";
+        nameLengthError.style.color = "";
+        firstNameError.style.color = "";
+        obj.style.color = ""; // Reset text color in input
+
+        if (!/^[A-Z][a-z]{4,21}$/.test(obj.value)) {
+          // Updated regex to allow up to 22 characters
+          if (obj.value.length > maxLength) {
+            (nameLengthError.innerHTML = "No more than 22 characters allowed!") &&
+              (nameLengthError.style.fontSize = "small");
+            (nameLengthError.style.color = "red") &&
+              (nameLengthError.style.fontSize = "small");
+            // Error outside input
+          } else if (!/^[A-Z]/.test(obj.value)) {
+            (firstNameError.innerHTML = "Please start with a capital letter!") &&
+              (firstNameError.style.fontSize = "small");
+            (firstNameError.style.color = "red") &&
+              (firstNameError.style.fontSize = "small"); // Error outside input
+          } else if (obj.value.length < 5) {
+            (firstNameError.innerHTML = "Please enter at least 5 characters!") &&
+              (firstNameError.style.fontSize = "small");
+            (firstNameError.style.color = "red") &&
+              (firstNameError.style.fontSize = "small"); // Error outside input
+          }
+          return false;
+        }
+
+        // If everything is correct
+        obj.style.color = "green"; // Text in input is green when correct
+        return true;
+      }
+
+      function validanMejl(obj) {
+        obj.value = obj.value.toString();
+        if (
+          obj.value.match(
+            /^[A-Z]{1}[A-Z0-9.*(){}&^#@!$/_?|><%+-]{1,}[A-Z0-9]+@[A-Z]+(?:\.[A-Z]+)*$/i
+          ) === null
+        ) {
+          obj.style.color = "red";
+          (document.getElementById("emailError").style.color = "red") &&
+            (document.getElementById("emailError").style.fontSize = "small");
+          (document.getElementById("emailError").innerHTML =
+            "Check your input!") &&
+            (document.getElementById("emailError").style.fontSize = "small");
+          return false;
+        }
+        obj.style.color = "green";
+        document.getElementById("emailError").innerHTML = "";
+        return true;
+      }
+    </script>
+  </body>
+</html>

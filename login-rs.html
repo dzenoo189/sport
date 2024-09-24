@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prijava - Sportski Događaji</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="pocetna.css" />
+  </head>
+  <body>
+    <header>
+      <div
+        class="zaglavlje"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <a href="pocetna.html">
+            <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+        <div class="logo-name">
+          <h2 style="color: aliceblue; letter-spacing: 2px">
+            <b>SPORTSKI DOGAĐAJI</b>
+          </h2>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div>
+          <a
+            href="login-eng.html"
+            class="lang"
+            style="text-decoration: none; color: white"
+            >EN</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="login">
+        <div class="login-container" style="text-align: center">
+          <h3>PRIJAVA</h3>
+          <form>
+            <div>
+              <label for="username">Korisničko ime:</label>
+              <input
+                id="username"
+                type="text"
+                placeholder="Unesite vase korisnicko ime..."
+              />
+            </div>
+            <div>
+              <label for="password">Lozinka:</label>
+              <input
+                id="passwordd"
+                type="password"
+                placeholder="Unesite vasu lozinku..."
+              />
+            </div>
+            <div>
+              <button type="submit" >
+                <a
+                  href="pocetna.html"
+                  style="text-decoration: none; color: aliceblue"
+                >
+                  Prijavi se
+                </a>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/yourprofile"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+    ></script>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("passwordd").value;
+        login(username, password);
+      }
+
+      function login(username, password) {
+        var hashedPass = CryptoJS.MD5(password).toString();
+
+        //ovde sam ti objasnila tamo na login-rs sta treba da se unese znaci samo link do users.json fajla
+        fetch("")  
+        .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+          })
+          .then((users) => {
+            let exist = false;
+
+            for (let i = 0; i < users.data.length; i++) {
+              if (
+                users.data[i].username == username &&
+                users.data[i].password == hashedPass
+              ) {
+                alert("Ulogovani ste!");
+                localStorage.setItem("logged_in", true);
+
+                window.location.href = ""; //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
+                exist = true;
+                break;
+              }
+            }
+
+            if (!exist) {
+              alert("Neispravni podaci za prijavljivanje");
+            }
+          })
+          .catch((error) => console.error("Unable to fetch data:", error));
+      }
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

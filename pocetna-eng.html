@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports Events - Home</title>
+    <link rel="stylesheet" href="pocetna.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      #subscribe-message {
+        display: none;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: #d4edda;
+        color: #155724;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="zaglavlje" style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+          <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+        </div>
+        <h2><b>SPORTS EVENTS</b></h2>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div>
+          <a href="pocetna.html" style="text-decoration: none; color: white">
+            RS
+          </a>
+        </div>
+      </div>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="pocetna-eng.html">Home</a></li>
+          <li><a href="index-eng.html">Interesting facts</a></li>
+          <li><a href="predstojeci.html">Upcoming Events</a></li>
+          <li><a href="prosli.html">Past Events</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <h3>Welcome to Sports Events</h3>
+        <br /><br />
+        <a href="#" class="btn" id="subscribe-btn"
+          >Subscribe for the latest news</a
+        >
+        <p id="subscribe-message">
+          You have successfully subscribed to the newsletter!
+        </p>
+      </section>
+
+      <section id="novi-događaji">
+        <h2>Latest Events</h2>
+        <p>Stay updated with the latest sports events and news.</p>
+        <div class="news-carousel" id="news-carousel"></div>
+      </section>
+
+      <section id="predstavljeni-dogadjaji">
+        <div class="dogadjaj">
+          <h3>Football Tournament</h3>
+          <p>
+            This year we are organizing a major football tournament in your
+            city.
+          </p>
+        </div>
+        <div class="dogadjaj">
+          <h3>Basketball Cup</h3>
+          <p>Follow all the exciting moments at our basketball cup.</p>
+        </div>
+        <div class="dogadjaj">
+          <h3>Tennis League</h3>
+          <p>Don’t miss the most important matches of our tennis league.</p>
+        </div>
+        <div class="dogadjaj">
+          <h3>Athletics Championship</h3>
+          <p>Watch the best athletes in action at our championship.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Sports Events. All rights reserved.</p>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/yourprofile"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+      });
+
+      document.getElementById("subscribe-btn").addEventListener("click", () => {
+        const message = document.getElementById("subscribe-message");
+        message.style.display = "block";
+        setTimeout(() => {
+          message.style.display = "none";
+        }, 5000);
+        fetch("http://localhost:4000/novosti")
+          .then((response) => {
+            console.log("Response:", response);
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Data:", data);
+            const newsCarousel = document.getElementById("news-carousel");
+
+            newsCarousel.innerHTML = "";
+
+            const newsItem = document.createElement("div");
+            newsItem.textContent = data.message;
+            newsItem.classList.add("news-item");
+            newsCarousel.appendChild(newsItem);
+
+            const items = document.querySelectorAll(
+              "#novi-događaji .news-item"
+            );
+            items.forEach((item, index) => {
+              item.classList.toggle("active", index === 0);
+            });
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+    </script>
+  </body>
+</html>
