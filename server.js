@@ -1,12 +1,10 @@
-require('dotenv').config(); // Učitaj varijable iz .env datoteke
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = process.env.PORT || 5000; // Koristi novi port
- // Koristi PORT iz .env datoteke ili 4000 ako nije definisan
+const port = 4000;
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); 
+app.use(express.json()); 
 
 const news = [
   "Vest 1: Veliki fudbalski meč se bliži!",
@@ -23,5 +21,5 @@ app.get('/novosti', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server sluša na portu ${port}`);
+  console.log(`Server slusa na portu ${port}`);
 });

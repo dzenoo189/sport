@@ -68,23 +68,41 @@
             <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
     </footer>
-<script>
-    document.getElementById('subscribe-btn').addEventListener('click', () => {
-        fetch('http://localhost:5000/novosti')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Data:', data); 
-                const newsCarousel = document.getElementById('news-carousel');
-                newsCarousel.innerHTML = '';
-                const newsItem = document.createElement('div');
-                newsItem.textContent = data.message;
-                newsItem.classList.add('news-item');
-                newsCarousel.appendChild(newsItem);
-            })
-            .catch(error => console.error('Greška:', error));
-    });
-    
-</script>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        });
+        
+        document.getElementById('subscribe-btn').addEventListener('click', () => {
+            fetch('http://localhost:4000/novosti')
+                .then(response => {
+                    console.log('Response:', response); 
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data:', data); 
+                    const newsCarousel = document.getElementById('news-carousel');
+                    
+                  
+                    newsCarousel.innerHTML = '';
+        
+             
+                    const newsItem = document.createElement('div');
+                    newsItem.textContent = data.message;
+                    newsItem.classList.add('news-item');
+                    newsCarousel.appendChild(newsItem);
+        
+              
+                    const items = document.querySelectorAll('#novi-događaji .news-item');
+                    items.forEach((item, index) => {
+                        item.classList.toggle('active', index === 0);
+                    });
+                })
+                .catch(error => console.error('Greška:', error));
+        });
+        </script>
         
 </body>
 </html>
