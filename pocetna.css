@@ -1,3 +1,49 @@
+:root {
+    --primary-color: #173351;
+    --secondary-color: #9a803f;
+    --accent-color: #007bff;
+    --background-color: #cbbd52;
+    --text-color: white;
+}
+
+.jezik {
+    display: flex;
+    align-items: center;
+}
+
+.jezik-link {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.jezik-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lagana promena boje na hover */
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+    .zaglavlje {
+        flex-direction: column; /* Preklopi na vertikalni raspored na mobilnim uređajima */
+        align-items: flex-start; /* Poravnaj na levo */
+    }
+    main h2{
+        align-items: center;
+        
+      }
+
+    .jezik {
+        margin-top: 10px; /* Dodaj malo razmaka iznad jezičkih linkova */
+    }
+
+    .menu-toggle {
+        margin-top: 10px; /* Dodaj malo razmaka iznad hamburger menija */
+    }
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -6,9 +52,8 @@ body, html {
     background-color: #9dc6f1;
 }
 
-
 header {
-    background-color: #173351;
+    background-color: var(--primary-color);
     padding: 25px;
     text-align: center;
     border-bottom: 1px solid #ddd;
@@ -30,10 +75,10 @@ header {
     display: none;
     cursor: pointer;
     font-size: 24px;
-    color: #ffffff;
-    background-color: #173351;
+    color: var(--text-color);
+    background-color: var(--primary-color);
     border: none;
-    padding: 10px 15px; 
+    padding: 10px 15px;
     border-radius: 5px;
     position: absolute;
     top: 20px;
@@ -47,7 +92,7 @@ header {
     align-items: center;
     padding: 0;
     margin: 0;
-    top: 10px;
+    background-color: var(--primary-color);
 }
 
 #nav-menu ul {
@@ -64,23 +109,28 @@ header {
 
 #nav-menu ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--text-color);
     font-weight: bold;
 }
 
 #nav-menu ul li a:hover {
-    color: #007BFF;
+    color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        background-color: none;
+        width: 10%;
     }
-    
+
     header {
         padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
-    
+
     .logo {
         max-width: 50px; 
         top: 10px;
@@ -93,7 +143,7 @@ header {
         top: 90px; 
         left: 0;
         right: 0;
-        background-color: #173351;
+        background-color: var(--primary-color);
         text-align: center;
         z-index: 1000;
     }
@@ -114,12 +164,13 @@ header {
 
     #nav-menu ul li a {
         display: block;
-        padding: 12px 20px; 
-        color: #ffffff;
+        padding: 12px 20px;
+        color: var(--text-color);
     }
 }
-header h2{
-    color: white;
+
+header h2 {
+    color: var(--text-color);
 }
 
 @media screen and (max-width: 480px) {
@@ -128,11 +179,9 @@ header h2{
     }
 }
 
-
-
 #hero {
-    background: url('hero.jpg') no-repeat center center/cover;
-    color: white;
+    background: url("hero.jpg") no-repeat center center/cover;
+    color: var(--text-color);
     text-align: center;
     padding: 60px 20px;
     border-radius: 5px;
@@ -159,8 +208,8 @@ header h2{
 }
 
 #hero .btn {
-    background-color: #9a803f;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 25px;
@@ -173,18 +222,18 @@ header h2{
     display: inline-block;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 #hero .btn:hover {
     background-color: #315780;
 }
 
-
 #novi-događaji {
     text-align: center;
     padding: 20px;
-    background-color: #cbbd52;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     border-radius: 5px;
     position: relative;
     overflow: hidden;
@@ -209,20 +258,25 @@ header h2{
 #novi-događaji .news-item {
     font-size: 1em;
     background-color: #ffffff;
-    color: #007BFF;
+    color: #007bff;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    max-width: 300px; 
-    width: 100%; 
-    text-align: center; 
-    display: none; 
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    display: none;
 }
 
 #novi-događaji .news-item.active {
     display: block; 
 }
 
+#novi-događaji .news-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 #predstavljeni-dogadjaji {
     display: flex;
@@ -255,8 +309,8 @@ header h2{
 
 /* Stilizovanje footera */
 footer {
-    background-color: #173351;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
     position: relative;
@@ -271,12 +325,62 @@ footer p {
 }
 
 .social-icons a {
-    color: white;
+    color: var(--text-color);
     font-size: 24px;
     margin: 0 10px;
     text-decoration: none;
 }
 
 .social-icons a:hover {
-    color: #007BFF;
+    color: var(--accent-color);
+}
+
+/* login */
+.login-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.login-container form div {
+    margin-bottom: 15px;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #315780;
+}
+
+#login {
+    height: 62.1vh;
 }

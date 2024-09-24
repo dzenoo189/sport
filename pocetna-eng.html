@@ -28,27 +28,30 @@
   </head>
   <body>
     <header>
-      <div class="zaglavlje" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="zaglavlje" style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+          <a href="pocetna.html">
+            <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+          </a>
         </div>
-        <h2><b>SPORTS EVENTS</b></h2>
+        <div>
+          <h2 style="color: aliceblue; letter-spacing: 2px"><b>SPORTSKI DOGAĐAJI</b></h2>
+        </div>
         <div class="menu-toggle" id="menu-toggle">
           <i class="fa fa-bars"></i>
         </div>
-        <div>
-          <a href="pocetna.html" style="text-decoration: none; color: white">
-            RS
-          </a>
+        <div class="jezik">
+          <a href="pocetna-eng.html" style="text-decoration: none; color: white; margin: 0 10px;">ENG</a>
+          <a href="pocetna.html" style="text-decoration: none; color: white;">RS</a>
         </div>
       </div>
       <nav id="nav-menu">
         <ul>
           <li><a href="pocetna-eng.html">Home</a></li>
-          <li><a href="index-eng.html">Interesting facts</a></li>
-          <li><a href="predstojeci.html">Upcoming Events</a></li>
-          <li><a href="prosli.html">Past Events</a></li>
-          <li><a href="kontakt.html">Contact</a></li>
+          <li><a href="index-eng.html">Interesting Facts</a></li>
+          <li><a href="predstojeci-eng.html">Upcoming Events</a></li>
+          <li><a href="prosli-eng.html">Past Events</a></li>
+          <li><a href="kontakt-eng.html">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -57,12 +60,8 @@
       <section id="hero">
         <h3>Welcome to Sports Events</h3>
         <br /><br />
-        <a href="#" class="btn" id="subscribe-btn"
-          >Subscribe for the latest news</a
-        >
-        <p id="subscribe-message">
-          You have successfully subscribed to the newsletter!
-        </p>
+        <a href="#" class="btn" id="subscribe-btn">Subscribe for the latest news</a>
+        <p id="subscribe-message">You have successfully subscribed to the newsletter!</p>
       </section>
 
       <section id="novi-događaji">
@@ -72,12 +71,10 @@
       </section>
 
       <section id="predstavljeni-dogadjaji">
+        <h2></h2>
         <div class="dogadjaj">
           <h3>Football Tournament</h3>
-          <p>
-            This year we are organizing a major football tournament in your
-            city.
-          </p>
+          <p>This year we are organizing a major football tournament in your city.</p>
         </div>
         <div class="dogadjaj">
           <h3>Basketball Cup</h3>
@@ -97,24 +94,15 @@
     <footer>
       <p>&copy; 2024 Sports Events. All rights reserved.</p>
       <div class="social-icons">
-        <a
-          href="https://www.instagram.com/yourprofile"
-          target="_blank"
-          aria-label="Instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a
-          href="https://wa.me/yourphonenumber"
-          target="_blank"
-          aria-label="WhatsApp"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
-        <a
-          href="https://github.com/yourprofile"
-          target="_blank"
-          aria-label="GitHub"
-          ><i class="fab fa-github"></i
-        ></a>
+        <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
     </footer>
 
@@ -153,7 +141,7 @@
               item.classList.toggle("active", index === 0);
             });
           })
-          .catch((error) => console.error("Error:", error));
+          .catch((error) => console.error("Greška:", error));
       });
     </script>
   </body>

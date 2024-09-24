@@ -5,7 +5,43 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #9dc6f1;
 }
+.jezik {
+    display: flex;
+    align-items: center;
+}
 
+.jezik-link {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.jezik-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lagana promena boje na hover */
+}
+
+@media (max-width: 768px) {
+    .zaglavlje {
+        flex-direction: column; /* Preklopi na vertikalni raspored na mobilnim uređajima */
+        align-items: flex-start; /* Poravnaj na levo */
+    }
+    main h2{
+        align-items: center;
+        
+      }
+
+    .jezik {
+        margin-top: 10px; /* Dodaj malo razmaka iznad jezičkih linkova */
+    }
+
+    .menu-toggle {
+        margin-top: 10px; /* Dodaj malo razmaka iznad hamburger menija */
+    }
+}
 header {
     background-color: #173351;
     padding: 25px;

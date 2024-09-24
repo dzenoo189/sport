@@ -71,6 +71,7 @@
             </div>
             <div>
               <button type="submit" >
+
                 <a
                   href="pocetna.html"
                   style="text-decoration: none; color: aliceblue"
@@ -126,9 +127,11 @@
 
       function login(username, password) {
         var hashedPass = CryptoJS.MD5(password).toString();
+        fetch("http://sporttevents.surge.sh/users.json")  
 
         //ovde sam ti objasnila tamo na login-rs sta treba da se unese znaci samo link do users.json fajla
         fetch("")  
+
         .then((res) => {
             if (!res.ok) {
               throw new Error(`HTTP error! Status: ${res.status}`);
@@ -145,8 +148,10 @@
               ) {
                 alert("Ulogovani ste!");
                 localStorage.setItem("logged_in", true);
+                window.location.href = "http://sporttevents.surge.sh/pocetna"; 
 
                 window.location.href = ""; //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
+
                 exist = true;
                 break;
               }

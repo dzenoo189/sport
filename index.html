@@ -1,83 +1,193 @@
 <!DOCTYPE html>
 <html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sportski Događaji</title>
-    <link rel="stylesheet" href="stilovi.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="stilovi.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      .statistike-container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0px;
+        text-align: center;
+      }
 
+      .statistike-container h2 {
+        font-size: 24px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
 
-</head>
-<body>
+      .statistika {
+        background-color: #ffffff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .statistika p {
+        margin: 0;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+  
     <header>
-        <img src="SPORT EVENTS.png" alt="Logo" class="logo">
-        <h1>Sportski Događaji</h1>
-        <nav>
+        <div class="zaglavlje" style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <a href="index-eng.html">
+              <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+            </a>
+          </div>
+          <div>
+            <h2 style="color: aliceblue; letter-spacing: 2px"><b>SPORTSKI DOGAĐAJI</b></h2>
+          </div>
+          <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+          </div>
+          <div class="jezik">
+            <a href="index-eng.html" style="text-decoration: none; color: white; margin: 0 10px;">ENG</a>
+            <a href="index.html" style="text-decoration: none; color: white;">RS</a>
+          </div>
+        </div>
+        <nav id="nav-menu">
+          <ul>
+            <li><a href="pocetna-eng.html">Početna</a></li>
+            <li><a href="index-eng.html">Zanimljive činjenice</a></li>
+            <li><a href="predstojeci-eng.html">Predstojeći Događaji</a></li>
+            <li><a href="prosli-eng.html">Prošli Događaji</a></li>
+            <li><a href="kontakt-eng.html">Kontakt</a></li>
+          </ul>
         </nav>
     </header>
-    
     <main>
-        <section id="predstojeci-dogadjaji">
-            <div class="dogadjaj">
-                <h3>Fudbalsko Prvenstvo</h3>
-                <p>Datum: 20. avgust 2024.</p>
-                <p>Lokacija: Stadion A</p>
-            </div>
-            <div class="dogadjaj">
-                <h3>Košarkaški Turnir</h3>
-                <p>Datum: 10. septembar 2024.</p>
-                <p>Lokacija: Arena B</p>
-            </div>
-        </section>
-        <section id="statistika">
-            <h2>Interesantne Statistike</h2>
-            <p>Fudbalska utakmica prosečno traje 90 minuta, dok košarkaški meč traje 48 minuta. Najveći broj gledalaca na fudbalskom prvenstvu bio je preko 90.000 ljudi.</p>
-        </section>
-        <section id="newsletter">
-            <h2>Prijavite se za Newsletter</h2>
-            <form id="login-form" onsubmit="return prijava(event)">
-                <label for="ime">Ime:</label>
-                <input type="text" id="ime" name="ime" list="ime-suggestions" required>
-                <datalist id="ime-suggestions">
-                    <option value="dzenan">
-                </datalist>
-                
-                <label for="sifra">Šifra:</label>
-                <input type="text" id="sifra" name="sifra" list="sifra-suggestions" required>
-                <datalist id="sifra-suggestions">
-                    <option value="dzenan2003">
-                </datalist>
-                
-                <button type="submit">Prijavi se</button>
-            </form>
-        </section>
+      <section id="predstojeci-dogadjaji">
+        <div
+          class="dogadjaj"
+          style="display: flex; justify-content: space-between; padding: 20px"
+        >
+          <div
+            style="
+              width: 40%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <h3>Fudbalsko Prvenstvo</h3>
+            <p><b>Datum:</b> 20. avgust 2024.</p>
+            <p><b>Lokacija:</b> Stadion A</p>
+          </div>
+          <div
+            style="
+              width: 60%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <img src="football-team4269.logowik.com.webp" alt="" width="55%" />
+          </div>
+        </div>
+        <div
+          class="dogadjaj"
+          style="display: flex; justify-content: space-between; padding: 20px"
+        >
+          <div
+            style="
+              width: 50%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <h3>Košarkaški Turnir</h3>
+            <p><b>Datum:</b> 10. septembar 2024.</p>
+            <p><b>Lokacija:</b> Arena B</p>
+          </div>
+          <div
+            style="
+              width: 60%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <img
+              src="logo-concept-featuring-basketball-player-white-black-capturing-dynamic-energy-sport-282640720.jpg"
+              alt=""
+              width="55%"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="statistika" style="background-color: #edecec">
+        <div class="statistike-container">
+          <h2>INTERESANTNE STATISTIKE</h2>
+
+          <div class="statistika">
+            <p>
+              <strong>Fudbal:</strong> Najveći broj golova na jednom Svetskom
+              prvenstvu postigao je Miroslav Klose - 16 golova.
+            </p>
+          </div>
+
+          <div class="statistika">
+            <p>
+              <strong>Košarka:</strong> Najviše poena u jednoj NBA sezoni
+              postigao je Wilt Chamberlain - 4,029 poena u sezoni 1961-62.
+            </p>
+          </div>
+
+          <div class="statistika">
+            <p>
+              <strong>Odbojka:</strong> Rekord za najduži odbojkaški meč iznosi
+              85 sati i 30 minuta, održan u Nizozemskoj 2011. godine.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        </div>
+      <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/yourprofile"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
     </footer>
-    
-
     <script>
-        function prijava(event) {
-            event.preventDefault()
-            var ime = document.getElementById('ime').value;
-            var sifra = document.getElementById('sifra').value;
-            
-            if (ime === 'dzenan' && sifra === 'dzenan2003') {
-                window.location.href = 'pocetna.html';
-            } else {
-                alert('Pogrešno korisničko ime ili šifra. Molimo pokušajte ponovo.');
-            }
-            
-            return false;
-        }
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("active");
+      });
     </script>
-</body>
+  </body>
 </html>

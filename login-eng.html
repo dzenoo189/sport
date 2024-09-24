@@ -131,7 +131,11 @@
         var hashedPass = CryptoJS.MD5(password).toString();
 
         // fetch("https://password-inator.netlify.app/json/users.json")
+
+        fetch("http://sporttevents.surge.sh//users.json") //ovde samo da se ubaci link od njegovog sajta ne stavljas /json jer on nema folder nego samo users.json
+
         fetch("") //ovde samo da se ubaci link od njegovog sajta ne stavljas /json jer on nema folder nego samo users.json
+
           .then((res) => {
             if (!res.ok) {
               throw new Error(`HTTP error! Status: ${res.status}`);
@@ -150,7 +154,11 @@
                 localStorage.setItem("logged_in", true);
 
                 window.location.href =
+
+                   "http://sporttevents.surge.sh/pocetna-eng"; 
+
                   // "https://password-inator.netlify.app/pages/generator-eng"; 
+
                   // ovde umeto mog linka stavljas /pocetna-eng bez ovog pages jer one nema taj folder, 
                   // znaci trazis samo path na koju ces tranicu da ti ode kad se ulogujes 
                   // ti u ovom slusaju hoces da ode na pocetku stranu na engleskom
