@@ -84,7 +84,7 @@
     function login(username, password) {
       var hashedPass = CryptoJS.MD5(password).toString();
 
-      fetch("https://sportteventts.netlify.app/users.json")
+      fetch("https://sporteeventts.netlify.app/users.json")
         .then((res) => {
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
@@ -98,7 +98,7 @@
             if (users.data[i].username == username && users.data[i].password == hashedPass) {
               alert("You are logged in");
               localStorage.setItem("logged_in", true);
-              window.location.href = "https://sportteventts.netlify.app/pocetna-eng"; 
+              window.location.href = "https://sporteeventts.netlify.app/pocetna-eng"; 
               exist = true;
               break;
             }
