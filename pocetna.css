@@ -24,6 +24,25 @@
 .jezik-link:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Lagana promena boje na hover */
 }
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50; /* Zeleni pozadina za uspešne poruke */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000; /* Osigurava da se prikaže iznad ostalog sadržaja */
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.notification.error {
+    background-color: #f44336; /* Crvena pozadina za greške */
+}
+
 
 /* Responsivnost */
 @media (max-width: 768px) {
@@ -384,3 +403,23 @@ footer p {
 #login {
     height: 62.1vh;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Ovo omogućava main delu da zauzima preostali prostor */
+}
+
+footer {
+    margin-top: auto; /* Ovo pomera footer na kraj stranice */
+    text-align: center; /* Centriranje sadržaja u footer-u */
+    padding: 10px 0; /* Dodaj padding po potrebi */
+}
+

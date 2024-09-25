@@ -1,172 +1,175 @@
 <!DOCTYPE html>
 <html lang="sr">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prijava - Sportski Događaji</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
     <link rel="stylesheet" href="pocetna.css" />
-  </head>
-  <body>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1; /* Ovo omogućava main delu da zauzima preostali prostor */
+        }
+
+        footer {
+            margin-top: auto; /* Ovo pomera footer na kraj stranice */
+            text-align: center; /* Centriranje sadržaja u footer-u */
+            padding: 10px 0; /* Dodaj padding po potrebi */
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4caf50; /* Zeleno za uspešne poruke */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 1000; /* Iznad ostalog sadržaja */
+            transition: opacity 0.5s ease, top 0.5s ease;
+            opacity: 0;
+            visibility: hidden; /* Skriveno dok se ne prikaže */
+        }
+
+        .notification.show {
+            opacity: 1;
+            visibility: visible;
+            top: 30px; /* Pomeranje kada je vidljivo */
+        }
+
+        .notification.error {
+            background-color: #f44336; /* Crveno za greške */
+        }
+
+        .notification.success {
+            background-color: #4caf50; /* Zeleno za uspeh */
+        }
+    </style>
+</head>
+<body>
     <header>
-      <div
-        class="zaglavlje"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <div>
-          <a href="pocetna.html">
-            <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
-          </a>
+        <div class="zaglavlje" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <a href="pocetna.html">
+                    <img src="SPORT EVENTS.png" alt="Logo" class="logo" />
+                </a>
+            </div>
+            <div class="logo-name">
+                <h2 style="color: aliceblue; letter-spacing: 2px"><b>SPORT</b></h2>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div>
+                <a href="login-eng.html" class="lang" style="text-decoration: none; color: white">EN</a>
+            </div>
         </div>
-        <div class="logo-name">
-          <h2 style="color: aliceblue; letter-spacing: 2px">
-            <b>SPORTSKI DOGAĐAJI</b>
-          </h2>
-        </div>
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fa fa-bars"></i>
-        </div>
-        <div>
-          <a
-            href="login-eng.html"
-            class="lang"
-            style="text-decoration: none; color: white"
-            >EN</a
-          >
-        </div>
-      </div>
     </header>
 
-    <main>
-      <section id="login">
-        <div class="login-container" style="text-align: center">
-          <h3>PRIJAVA</h3>
-          <form>
-            <div>
-              <label for="username">Korisničko ime:</label>
-              <input
-                id="username"
-                type="text"
-                placeholder="Unesite vase korisnicko ime..."
-              />
-            </div>
-            <div>
-              <label for="password">Lozinka:</label>
-              <input
-                id="passwordd"
-                type="password"
-                placeholder="Unesite vasu lozinku..."
-              />
-            </div>
-            <div>
-              <button type="submit" >
+    <div id="notification" class="notification"></div>
 
-             
-                  Prijavi se
-                </a>
-              </button>
+    <main>
+        <section id="login">
+            <div class="login-container" style="text-align: center">
+                <h3>PRIJAVA</h3>
+                <form id="login-form">
+                    <div>
+                        <label for="username">Korisničko ime:</label>
+                        <input id="username" type="text" placeholder="Unesite vaše korisničko ime..." required />
+                    </div>
+                    <div>
+                        <label for="password">Lozinka:</label>
+                        <input id="password" type="password" placeholder="Unesite vašu lozinku..." required />
+                    </div>
+                    <div>
+                        <button type="submit">Prijavi se</button>
+                    </div>
+                </form>
             </div>
-          </form>
-        </div>
-      </section>
+        </section>
     </main>
 
     <footer>
-      <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
-      <div class="social-icons">
-        <a
-          href="https://www.instagram.com/yourprofile"
-          target="_blank"
-          aria-label="Instagram"
-        >
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a
-          href="https://wa.me/yourphonenumber"
-          target="_blank"
-          aria-label="WhatsApp"
-        >
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a
-          href="https://github.com/yourprofile"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
+        <p>&copy; 2024 Sportski Događaji. Sva prava zadržana.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </footer>
 
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
-    ></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script>
-      function handleSubmit(event) {
-        event.preventDefault();
+        function showNotification(message, isError = false) {
+            const notification = document.getElementById("notification");
+            notification.textContent = message;
+            notification.className = "notification show " + (isError ? "error" : "success");
+            setTimeout(() => {
+                notification.classList.remove("show");
+            }, 3000); 
+        }
 
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("passwordd").value;
-        login(username, password);
-      }
+        function handleSubmit(event) {
+            event.preventDefault(); // Sprečava slanje forme
 
-      function login(username, password) {
-        var hashedPass = CryptoJS.MD5(password).toString();
-        fetch("https://sporteeventts.netlify.app/users.json")  
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            login(username, password);
+        }
 
-        //ovde sam ti objasnila tamo na login-rs sta treba da se unese znaci samo link do users.json fajla
-       
-   //ovde samo da se ubaci link od njegovog sajta ne stavljas /json jer on nema folder nego samo users.json
+        function login(username, password) {
+            var hashedPass = CryptoJS.MD5(password).toString();
+            fetch("users.json") // Link do users.json (možeš koristiti lokalnu putanju)
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((users) => {
+                    let exist = false;
 
-          .then((res) => {
-            if (!res.ok) {
-              throw new Error(`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-          })
-          .then((users) => {
-            let exist = false;
+                    for (let i = 0; i < users.data.length; i++) {
+                        if (users.data[i].username === username && users.data[i].password === hashedPass) {
+                            showNotification("Uspešno ste se prijavili!");
+                            localStorage.setItem("logged_in", true);
+                            
+                            // Dodavanje kratke pauze pre preusmeravanja
+                            setTimeout(() => {
+                                window.location.href = "pocetna.html"; // Link ka početnoj stranici
+                            }, 3000); // Preusmeri posle 3 sekunde
+                            exist = true;
+                            break;
+                        }
+                    }
 
-            for (let i = 0; i < users.data.length; i++) {
-              if (
-                users.data[i].username == username &&
-                users.data[i].password == hashedPass
-              ) {
-                alert("You are logged in");
-                localStorage.setItem("logged_in", true);
+                    if (!exist) {
+                        showNotification("Neispravni podaci za prijavljivanje!", true);
+                    }
+                })
+                .catch((error) => console.error("Unable to fetch data:", error));
+        }
 
-                window.location.href =
-
-                   "https://sporteeventts.netlify.app/pocetna"; 
-
-             //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
-
-                exist = true;
-                break;
-              }
-            }
-
-            if (!exist) {
-              alert("Neispravni podaci za prijavljivanje");
-            }
-          })
-          .catch((error) => console.error("Unable to fetch data:", error));
-      }
-      document
-        .getElementById("login-form")
-        .addEventListener("submit", handleSubmit);
+        document.getElementById("login-form").addEventListener("submit", handleSubmit);
     </script>
-  </body>
+</body>
 </html>
