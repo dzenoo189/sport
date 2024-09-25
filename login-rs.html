@@ -127,10 +127,10 @@
 
       function login(username, password) {
         var hashedPass = CryptoJS.MD5(password).toString();
-        fetch("http://sporttevents.surge.sh/users.json")  
+        fetch("https://sportteventts.netlify.app/users.json")  
 
         //ovde sam ti objasnila tamo na login-rs sta treba da se unese znaci samo link do users.json fajla
-        fetch("")  
+      
 
         .then((res) => {
             if (!res.ok) {
@@ -148,9 +148,7 @@
               ) {
                 alert("Ulogovani ste!");
                 localStorage.setItem("logged_in", true);
-                window.location.href = "http://sporttevents.surge.sh/pocetna"; 
-
-                window.location.href = ""; //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
+                window.location.href = "https://sportteventts.netlify.app/pocetna"; //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
 
                 exist = true;
                 break;
