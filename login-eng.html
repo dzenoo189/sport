@@ -84,7 +84,7 @@
     function login(username, password) {
       var hashedPass = CryptoJS.MD5(password).toString();
 
-      fetch("https://sportteventts.netlify.app/json/users.json")
+      fetch("https://sportteventts.netlify.app/users.json")
         .then((res) => {
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);

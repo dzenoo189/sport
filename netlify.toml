@@ -1,4 +1,8 @@
+[build]
+  publish = "SPORT"  # Ovaj naziv treba da bude naziv foldera gde su vaši statički fajlovi
+  command = "npm run build"  # Ovaj deo možete ostaviti ili izostaviti ako ne koristite npm
+
 [[redirects]]
   from = "/*"
   to = "/pocetna.html"
-  status = 404
+  status = 200

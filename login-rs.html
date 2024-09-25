@@ -72,10 +72,7 @@
             <div>
               <button type="submit" >
 
-                <a
-                  href="pocetna.html"
-                  style="text-decoration: none; color: aliceblue"
-                >
+             
                   Prijavi se
                 </a>
               </button>
@@ -130,9 +127,10 @@
         fetch("https://sportteventts.netlify.app/users.json")  
 
         //ovde sam ti objasnila tamo na login-rs sta treba da se unese znaci samo link do users.json fajla
-      
+       
+   //ovde samo da se ubaci link od njegovog sajta ne stavljas /json jer on nema folder nego samo users.json
 
-        .then((res) => {
+          .then((res) => {
             if (!res.ok) {
               throw new Error(`HTTP error! Status: ${res.status}`);
             }
@@ -146,9 +144,14 @@
                 users.data[i].username == username &&
                 users.data[i].password == hashedPass
               ) {
-                alert("Ulogovani ste!");
+                alert("You are logged in");
                 localStorage.setItem("logged_in", true);
-                window.location.href = "https://sportteventts.netlify.app/pocetna"; //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
+
+                window.location.href =
+
+                   "https://sportteventts.netlify.app/pocetna"; 
+
+             //ovde takodje stavljas link gde ces da te odvede kada se ulogujes. e ovde stavljas pocetna samo jer je na srpskom
 
                 exist = true;
                 break;
